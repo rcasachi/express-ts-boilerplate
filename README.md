@@ -1,2 +1,2 @@
-# express-ts-boilerplate
+# Boilerplate: express-ts
 Start from somewhere: Express in typescript
