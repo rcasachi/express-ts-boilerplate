@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import { index } from './controllers/main.controller';
+
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  res.send('it is working');
-});
+routes.get('/', index);
 
 export default routes;
