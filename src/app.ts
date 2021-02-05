@@ -1,11 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
+import routes from './routes';
+
 dotenv.config();
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('it is working');
-});
+app.use(routes);
 
 export default app;
