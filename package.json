@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:write"
+      "pre-commit": "npm run prettier:check"
     }
   },
   "repository": "git@github.com:rcasachi/express-ts-boilerplate.git",
