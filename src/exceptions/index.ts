@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 
-const exception = (err: any, req: Request, res: Response, next: NextFunction) => {
+const exception = (err: any, req: Request, res: Response) => {
   const { status, statusCode, message } = err;
 
   res.status(statusCode).json({
