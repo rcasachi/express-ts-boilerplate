@@ -1,13 +1,16 @@
 import { Request, Response } from 'express';
 
-const exception = (err: any, req: Request, res: Response) => {
-  const { status, statusCode, message } = err;
+const exception = (err: any, req: Request, res: Response, _) => {
+  const { message, status, statusCode } = err;
 
-  res.status(statusCode).json({
+  const body = {
     message,
+    errors: err?.errors ?? [],
     status: status || 'error',
     statusCode: statusCode || 500,
-  });
+  };
+
+  return res.status(statusCode).json(body);
 };
 
 export default exception;
