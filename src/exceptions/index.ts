@@ -1,14 +1,16 @@
 import { Request, Response } from 'express';
 
+import errorsSerializer from '../serializers/errors.serializer';
+
 const exception = (err: any, req: Request, res: Response, _) => {
   const { message, status, statusCode } = err;
 
-  const body = {
+  const body = errorsSerializer(
     message,
-    errors: err?.errors ?? [],
-    status: status || 'error',
-    statusCode: statusCode || 500,
-  };
+    statusCode || 500,
+    status || 'error',
+    err?.errors,
+  );
 
   return res.status(statusCode).json(body);
 };
