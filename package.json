@@ -11,6 +11,7 @@
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
+    "typeorm": "ts-node -r ./tsconfig.json ./node_modules/typeorm/cli.js",
     "test": "jest"
   },
   "husky": {
@@ -41,6 +42,9 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "indicative": "^7.4.4"
+    "indicative": "^7.4.4",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31"
   }
 }
