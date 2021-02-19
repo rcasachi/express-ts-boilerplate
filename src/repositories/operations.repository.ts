@@ -1,22 +1,11 @@
-import {
-  getRepository,
-  EntityTarget,
-  FindManyOptions,
-  DeepPartial,
-} from 'typeorm';
+import { getRepository, EntityTarget, FindManyOptions, DeepPartial } from 'typeorm';
 
-export const list = async (
-  model: EntityTarget<unknown>,
-  options: FindManyOptions,
-) => {
+export const list = async (model: EntityTarget<unknown>, options: FindManyOptions) => {
   const result = await getRepository(model).find(options);
   return result;
 };
 
-export const create = async (
-  model: EntityTarget<unknown>,
-  data: DeepPartial<unknown>[],
-) => {
+export const create = async (model: EntityTarget<unknown>, data: DeepPartial<unknown>[]) => {
   const repository = getRepository(model);
 
   const result = repository.create(data);
@@ -24,17 +13,13 @@ export const create = async (
   return resultInserted;
 };
 
-export const readById = async (model: EntityTarget<unknown>, id: any) => {
+export const readById = async (model: EntityTarget<unknown>, id) => {
   const repository = getRepository(model);
   const result = await repository.findOneOrFail(id);
   return result;
 };
 
-export const update = async (
-  model: EntityTarget<unknown>,
-  id: any,
-  data: DeepPartial<unknown>[],
-) => {
+export const update = async (model: EntityTarget<unknown>, id, data: DeepPartial<unknown>[]) => {
   const repository = getRepository(model);
 
   await repository.findOneOrFail(id);
@@ -42,7 +27,7 @@ export const update = async (
   return result;
 };
 
-export const deleteRow = async (model: EntityTarget<unknown>, id: any) => {
+export const deleteRow = async (model: EntityTarget<unknown>, id) => {
   const repository = getRepository(model);
 
   await repository.findOneOrFail(id);

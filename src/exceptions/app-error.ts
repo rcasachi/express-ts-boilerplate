@@ -1,7 +1,4 @@
-const appError = (
-  message: string = 'Internal Server Error',
-  statusCode: number = 500,
-) => {
+const appError = (message = 'Internal Server Error', statusCode = 500) => {
   return {
     message,
     statusCode,

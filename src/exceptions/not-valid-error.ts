@@ -1,4 +1,4 @@
-const notValidError = (errors: [], message: string = 'Bad Request') => {
+const notValidError = (errors: [], message = 'Bad Request') => {
   return {
     errors,
     message,

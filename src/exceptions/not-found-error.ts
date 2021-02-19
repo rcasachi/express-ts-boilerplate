@@ -1,4 +1,4 @@
-const notFoundError = (message: string = 'Not Found') => {
+const notFoundError = (message = 'Not Found') => {
   return {
     message,
     statusCode: 404,

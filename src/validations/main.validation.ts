@@ -12,11 +12,7 @@ const messages = {
   'email.email': 'Please enter a valid email address',
 };
 
-const mainValidation = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+const mainValidation = async (req: Request, res: Response, next: NextFunction) => {
   await handleValidation(req.body, rules, messages, next);
 };
 
