@@ -1,12 +1,12 @@
 import 'reflect-metadata';
-import express from 'express';
 import dotenv from 'dotenv';
+import express from 'express';
 
 import connection from './database/connection';
-import routes from './routes';
-import middlewares from './middlewares';
 import exceptions from './exceptions';
+import middlewares from './middlewares';
 import notFound from './middlewares/not-found';
+import routes from './routes';
 
 dotenv.config();
 const app = express();

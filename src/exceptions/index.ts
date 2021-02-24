@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 
 import errorsSerializer from '../serializers/errors.serializer';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const exception = (err, req: Request, res: Response, _) => {
   const { message, status, statusCode } = err;
 

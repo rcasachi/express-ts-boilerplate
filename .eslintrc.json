@@ -15,12 +15,14 @@
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "sort-destructure-keys"
   ],
   "ignorePatterns": ["src/database/migrations/**/*.ts"],
   "rules": {
     "no-console": 0,
     "prettier/prettier": "error",
+    "sort-destructure-keys/sort-destructure-keys": 2,
     "@typescript-eslint/explicit-function-return-type": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off",
@@ -31,8 +33,19 @@
       "ImportDeclaration": { "multiline": true },
       "ExportDeclaration": { "multiline": true, "minProperties": 3 }
     }],
-    "no-unused-vars": 1,
+    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": 1,
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
