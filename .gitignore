@@ -11,9 +11,11 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Coverage directory used by tools like istanbul
 coverage
+tests/coverage/
+tests/database.sqlite
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+build/
 dist/
 
 # Dependency directories
@@ -33,4 +35,3 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.test

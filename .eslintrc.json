@@ -1,8 +1,10 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true,
-    "jest": true
+    "jest": true,
+    "node": true
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
@@ -17,30 +19,72 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "sort-destructure-keys"
+    "sort-destructure-keys",
+    "import"
   ],
-  "ignorePatterns": ["src/database/migrations/**/*.ts"],
+  "ignorePatterns": [
+    "src/core/database/migrations/**/*.ts",
+    "node_modules",
+    "build"
+  ],
   "rules": {
+    "camelcase": 0,
     "no-console": 0,
     "prettier/prettier": "error",
+    "no-template-curly-in-string": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreStrings": true
+      }
+    ],
+    "@typescript-eslint/interface-name-prefix": "off",
     "sort-destructure-keys/sort-destructure-keys": 2,
     "@typescript-eslint/explicit-function-return-type": "off",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "allowSeparatedGroups": true
+      }
+    ],
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "object-curly-newline": ["error", {
-      "ObjectExpression": "always",
-      "ObjectPattern": { "multiline": true },
-      "ImportDeclaration": { "multiline": true },
-      "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-    }],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": {
+          "multiline": true
+        },
+        "ImportDeclaration": {
+          "multiline": true
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 3
+        }
+      }
+    ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": 1,
     "import/prefer-default-export": "off",
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ],
+          "index"
+        ],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
