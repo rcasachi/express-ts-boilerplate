@@ -44,7 +44,7 @@ export const readByField = async <T>(
   return result;
 };
 
-export const deleteRow = async (model: EntityTarget<unknown>, id) => {
+export const deleteRow = async <T>(model: EntityTarget<T>, id) => {
   const repository = getRepository(model);
 
   await repository.findOneOrFail(id);
