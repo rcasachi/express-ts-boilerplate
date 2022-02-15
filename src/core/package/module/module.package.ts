@@ -4,7 +4,9 @@ import { Module } from './module.interface';
 import { flattenModule } from './module.utils';
 
 export const useModuleRoutes = (module: Module, app: Express) => {
-  const [...modulesRoutes] = module.imports.map(({ routes }) => routes);
+  const [...modulesRoutes] = module.imports
+    .map(({ routes }) => routes)
+    .filter((e) => e !== undefined);
   const appRoutes = [...modulesRoutes, ...module.routes];
 
   appRoutes.map((route) => app.use(route));
